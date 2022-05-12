@@ -1,4 +1,4 @@
-# Módulo 6: Django
+# Módulo 7: Django
 ---
 
 ## Laboratorios LGC
@@ -16,7 +16,7 @@ A futuro se va a implementar la página de productos, servicios, el sistema para
 
 -Clonar el repositorio usando gitbash o el terminal que tenga en su computador local con el siguiente comando:
 
-\\\ git clone https://github.com/LiliGC/M6_DJANGO_individual.git \\\
+``` git clone https://github.com/LiliGC/M7_AE1_individual.git ```
 
 -Abrir la carpeta con el repositorio clonado en un editor de texto como Visual Studio Code con la opción indicada en la imagen.
 
@@ -24,41 +24,41 @@ A futuro se va a implementar la página de productos, servicios, el sistema para
 
 -Abrir un nuevo terminal en Visual Studio Code y crear el entorno virtual con el siguiente comando:
 
-\\\ pip install venv venv \\\
+```pip install venv venv ```
 
 -Luego activar el entorno virtual:
 
-\\\ cd venv/cd Scripts/activate \\\
+```cd venv/Scripts/activate ```
 
 -Volver a la carpeta principal con cd ..
 
 -Ahora instalar requirements con el siguiente comando:
 
-\ pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 -Hacer las migraciones con el comando:
 
-\ python manage.py migrate
+``` python manage.py migrate```
 
 -Crear tu superusuario para acceder al admin:
 
-\ python manage.py createsuperuser
+```python manage.py createsuperuser```
 
 -Y finalmente levantar el servidor con:
 
-\ python manage.py runserver
+``` python manage.py runserver```
 
-**Observaciones:** Si quisieras cargar los datos que utilicé de prueba tendrías que poner: \python manage.py loaddata data.json  y luego correr el comando \ python manage.py migrate.
+**Observaciones:** Si quisieras cargar los datos que utilicé de prueba tendrías que poner: ```python manage.py loaddata data.json```  y luego correr el comando ``` python manage.py migrate```
 
 ## Características de la aplicación
 
 * La aplicación labtienda  consta de una landing page del laboratorio.
 
-* Templates para iniciar sesión o crear una cuenta de usuarios, registro de clientes mediante un formulario de registro, lista de clientes en forma de tabla. 
+* Templates para iniciar sesión o crear una cuenta de usuarios, registro de clientes mediante un formulario de registro, listado de clientes en forma de tabla, catálogo de producto, formulario de registro de productos y listado de productos que permite editar y eliminar el producto.
 
 * Si inicias sesión, te da un mensaje de bienvenida y te permite el acceso a  ver la lista de clientes, agregar nuevos clientes mediante formulario de registro.
 
-* Además tiene restringido el acceso a páginas usando los decoradores @login_required y @staff_member_required, este último usado para restringir el acceso a ver la lista de clientes y agregar nuevos clientes para el staff de la aplicación.
+* Además tiene restringido el acceso a páginas usando los decoradores @login_required y @staff_member_required, este último usado para restringir el acceso a ver la listado de clientes, agregar nuevos clientes para el staff de la aplicación, listado de productos y formulario de registro de productos para el staff autorizado.
 
 ## Librerias usadas
 
@@ -75,3 +75,5 @@ Revisar el archivo requirements.txt. Algunas observaciones:
 * Para los mensajes de alerta se usó la librería de sweetalert2.
 
 * Se modificó la página del admin importando la librería admin_interface.
+
+* Para agregar imágenes al modelo de productos se usó la librería pillow.
