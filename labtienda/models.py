@@ -28,6 +28,3 @@ class Professional(User):
     registration_date=models.DateField(default=datetime.date.today, verbose_name= 'Fecha de registro')
 
 
-
-
-

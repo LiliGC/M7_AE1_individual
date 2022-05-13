@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-12 p-3 border" style="background-color: #ebebfa">
 
-            <h3>Datos de Clientes</h3>
+            <h3>Datos de Profesionales</h3>
         
                 <div class="table-responsive align-middle"> 
         
@@ -13,9 +13,11 @@
         
                         <thead> 
         
-                            <tr> 
+                            <tr>  
         
                                 <th scope="col">Run</th> 
+
+                                <th scope="col">Titulo</th> 
         
                                 <th scope="col">Nombre</th> 
         
@@ -29,6 +31,8 @@
 
                                 <th scope="col">Dirección</th> 
 
+                                <th scope="col">Fecha de registro</th>
+
                                 <th scope="col">Opciones</th>
         
                             </tr> 
@@ -37,27 +41,30 @@
         
                         <tbody> 
         
-                            {% for cli in clientes %} 
+                            {% for p in professionals %} 
         
                             <tr> 
-        
-                                <td>{{ cli.ci }}</td> 
-        
-                                <td>{{ cli.name }}</td> 
-        
-                                <td>{{ cli.last_name }}</td> 
-        
-                                <td>{{ cli.birth_date }}</td> 
-        
-                                <td>{{ cli.phone }}</td>
+                                <td>{{ p.ci }}</td> 
 
-                                <td>{{ cli.email }}</td> 
-                                
-                                <td>{{ cli.address }}</td>  
-                                <td>
-                                    <a href= "{% url 'cliente_edit'  cli.pk %}" class="btn btn-info">Editar</a> 
-                                    <a href= "{% url 'cliente_delete' cli.pk %}" class="btn btn-danger">Eliminar</a> </td> 
+                                <td>{{ p.title }}</td> 
         
+                                <td>{{ p.name }}</td> 
+        
+                                <td>{{ p.last_name }}</td> 
+        
+                                <td>{{ p.birth_date }}</td> 
+        
+                                <td>{{ p.phone }}</td>
+
+                                <td>{{ p.email }}</td> 
+                                
+                                <td>{{ p.address }}</td> 
+
+                                <td>{{ p.registration_date }}</td>    
+                                
+                                <td>
+                                    <a href= "{% url 'profesional_edit'  p.pk %}" class="btn btn-info">Editar</a> 
+                                    <a href= "{% url 'profesional_delete' p.pk %}" class="btn btn-danger">Eliminar</a> </td>
                             </tr> 
         
                             {% endfor %} 
@@ -66,7 +73,7 @@
         
                     </table> 
         
-                    <a href= "{% url 'registro' %}" class="btn btn-info">Agregar cliente</a> 
+                    <a href= "{% url 'registro_professional' %}" class="btn btn-info">Agregar profesional</a> 
                 </div> 
         
         </div> 
